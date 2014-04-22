@@ -15,3 +15,9 @@ VOLUME /repo
 VOLUME /data
 WORKDIR /data
 
+# Add certificate authority used by mitmproxy
+# NB This certificate expires in 2016
+# Also needs to be identical to the cert at mitmproxy/mitmproxy-ca.pem in
+# https://github.com/openaustralia/morph
+
+ADD mitmproxy-ca.pem /etc/ssl/certs/mitmproxy-ca.pem
