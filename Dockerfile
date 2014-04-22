@@ -17,7 +17,8 @@ WORKDIR /data
 
 # Add certificate authority used by mitmproxy
 # NB This certificate expires in 2016
-# Also needs to be identical to the cert at mitmproxy/mitmproxy-ca.pem in
+# Also needs to be identical to the cert at mitmproxy/mitmproxy-ca-cert.pem in
 # https://github.com/openaustralia/morph
 
-ADD mitmproxy-ca.pem /etc/ssl/certs/mitmproxy-ca.pem
+ADD mitmproxy-ca-cert.pem /usr/local/share/ca-certificates/mitmproxy-ca-cert.crt
+RUN update-ca-certificates
